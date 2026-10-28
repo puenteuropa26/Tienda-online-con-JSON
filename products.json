@@ -73,7 +73,41 @@
 
 {
     "id": 10,
-    "name": "bulldog",
-    "description": "Affordable automatic rifle, ideal for forced-buy rounds"
+    "name": "Bulldog",
+    "description": "Affordable automatic rifle, ideal for forced-buy rounds",
+    "category":  "Rifle",
+    "fire_mode": "Automatic"
+},
+
+{
+    "id": 11,
+    "name": "Guardian",
+    "description": "Valorant designated semi-automatic rifle designed for medium and long distance combat",
+    "category": "Rifle",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id": 12,
+    "name": "Warden",
+    "description": "Long-distance automatic rifle, characterized by its integrated sight glass",
+    "category": "Rifle",
+    "fire_mode": "Automatic"
+},
+
+{
+    "id": 13,
+    "name": "Phantom",
+    "description": "Automatic rifle, effective for short and medium distance.",
+    "category": "Rifle",
+    "fire_mode": "Automatic"
+},
+
+{
+    "id":14,
+    "name": "Vandal",
+    "description": "The quintessential rifle, designed to eliminate targets with a shot to the head.",
+    "category": "Rifle",
+    "fire_mode": "Automatic"
 }
 ]
