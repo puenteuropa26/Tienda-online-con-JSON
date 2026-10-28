@@ -1,0 +1,79 @@
+[
+{
+    "id": 1,
+    "name": "Classic",
+    "description": "It is the default weapon at the start of each round.",
+    "category": "Sidearm",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id": 2,
+    "name": "Shorty",
+    "description": "A compact shotgun that is effective at close range.",
+    "category": "Sidearm",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id": 3,
+    "name": "Frenzy",
+    "description": "A fully automatic sidearm that is effective at close range.",
+    "category": "Sidearm",
+    "fire_mode": "Fully-Automatic"
+},
+
+{
+    "id": 4,
+    "name": "Ghost",
+    "description": "A silenced sidearm that is effective at medium range.",
+    "category": "Sidearm",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id": 5,
+    "name": "Bandit",
+    "description": "A semi-automatic sidearm that is effective at medium range.",
+    "category": "Sidearm",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id": 6,
+    "name": "Sheriff",
+    "description": "A high-damage revolver that is effective at medium range.",
+    "category": "Sidearm",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id": 7,
+    "name": "Sheriff",
+    "description": "A high-damage revolver that is effective at medium range.",
+    "category": "Sidearm",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id": 8,
+    "name": "Stinger",
+    "description": "It is a submachine gun designed for close-quarters combat and budget-friendly rounds.",
+    "category": "SMGS",
+    "fire_mode": "Automatic"
+},
+
+{
+    "id": 9,
+    "name": "Spectre",
+    "description": "Automatic submachine gun, used as a primary weapon; ideal for close- and medium-range combat.",
+    "category": "SMGS",
+    "fire_mode": "Automatic"
+},
+
+{
+    "id": 10,
+    "name": "bulldog",
+    "description": "Affordable automatic rifle, ideal for forced-buy rounds"
+}
+]
