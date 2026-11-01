@@ -49,14 +49,6 @@
 
 {
     "id": 7,
-    "name": "Sheriff",
-    "description": "A high-damage revolver that is effective at medium range.",
-    "category": "Sidearm",
-    "fire_mode": "Semi-Automatic"
-},
-
-{
-    "id": 8,
     "name": "Stinger",
     "description": "It is a submachine gun designed for close-quarters combat and budget-friendly rounds.",
     "category": "SMGS",
@@ -64,7 +56,7 @@
 },
 
 {
-    "id": 9,
+    "id": 8,
     "name": "Spectre",
     "description": "Automatic submachine gun, used as a primary weapon; ideal for close- and medium-range combat.",
     "category": "SMGS",
@@ -72,7 +64,7 @@
 },
 
 {
-    "id": 10,
+    "id": 9,
     "name": "Bulldog",
     "description": "Affordable automatic rifle, ideal for forced-buy rounds",
     "category":  "Rifle",
@@ -80,7 +72,7 @@
 },
 
 {
-    "id": 11,
+    "id": 10,
     "name": "Guardian",
     "description": "Valorant designated semi-automatic rifle designed for medium and long distance combat",
     "category": "Rifle",
@@ -88,7 +80,7 @@
 },
 
 {
-    "id": 12,
+    "id": 11,
     "name": "Warden",
     "description": "Long-distance automatic rifle, characterized by its integrated sight glass",
     "category": "Rifle",
@@ -96,7 +88,7 @@
 },
 
 {
-    "id": 13,
+    "id": 12,
     "name": "Phantom",
     "description": "Automatic rifle, effective for short and medium distance.",
     "category": "Rifle",
@@ -104,10 +96,34 @@
 },
 
 {
-    "id":14,
+    "id":13,
     "name": "Vandal",
     "description": "The quintessential rifle, designed to eliminate targets with a shot to the head.",
     "category": "Rifle",
     "fire_mode": "Automatic"
+},
+
+{
+    "id":14,
+    "name": "Bucky",
+    "description": "A compact shotgun that is effective at close range.",
+    "category": "Shotguns",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id":15,
+    "name": "Judge",
+    "description": "A fully automatic sidearm that is effective at close range.",
+    "category": "Shotguns",
+    "fire_mode": "Automatic"
+},
+
+{
+    "id":16,
+    "name": "Marshal",
+    "description": "Semi-automatic sniper ideal for eco rounds.",
+    "category": "Sniper rifle",
+    "fire_mode": "Semi-Automatic"
 }
 ]
