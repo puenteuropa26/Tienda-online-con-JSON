@@ -125,5 +125,44 @@
     "description": "Semi-automatic sniper ideal for eco rounds.",
     "category": "Sniper rifle",
     "fire_mode": "Semi-Automatic"
+},
+{
+    "id":17,
+    "name": "Outlaw",
+    "description": "Semi-automatic, double-barreled sniper rifle",
+    "category": "Sniper rifle",
+    "fire_mode": "Semi-Automatic"
+},
+
+{
+    "id":18,
+    "name": "Operator",
+    "description": "A high-damage sniper rifle that is effective at long range.",
+    "category": "Sniper rifle",
+    "fire_mode": "Bolt-Action"
+},
+
+{
+    "id":19,
+    "name": "Ares",
+    "description": "A fully automatic machine gun that is effective at medium range.",
+    "category": "Machine Gun",
+    "fire_mode": "Automatic"
+},
+
+{
+    "id":20,
+    "name": "Odin",
+    "description": "A fully automatic machine gun that is effective at long range.",
+    "category": "Machine Gun",
+    "fire_mode": "Automatic"
+},
+
+{
+    "id":21,
+    "name": "Knife",
+    "description": "A melee weapon that is effective at close range.",
+    "category": "Melee",
+    "fire_mode": "Melee"
 }
 ]
