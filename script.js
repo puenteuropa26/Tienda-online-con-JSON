@@ -8,25 +8,31 @@ const cartModal = document.getElementById("cart-modal");
 const closeCartBtn = document.getElementById("close-cart");
 const cartItemsContainer = document.getElementById("cart-items");
 const cartTotalText = document.getElementById("cart-total");
+const checkoutBtn = document.getElementById("checkout-btn");
 
 let listaArmas = [];
 let carrito = [];
+let usuarioLogueado = null;
 let categoriaActual = "all";
 let ordenActual = "default";
 
 document.addEventListener("DOMContentLoaded", () => {
-    cargarCatalogo();
+    cargarDatosIniciales();
     inicializarEventos();
 });
 
-async function cargarCatalogo() {
+async function cargarDatosIniciales() {
     try {
-        const respuesta = await fetch("products.json");
-        listaArmas = await respuesta.json();
+        const respProductos = await fetch("products.json");
+        listaArmas = await respProductos.json();
+
+        const respUser = await fetch("userData.json");
+        usuarioLogueado = await respUser.json();
+
         filtrarYRenderizar();
     } catch (error) {
-        console.error("Error al cargar el JSON:", error);
-        gridProductos.innerHTML = "<p style='color: #ff4655;'>Error al cargar el arsenal.</p>";
+        console.error("Error al cargar los datos:", error);
+        gridProductos.innerHTML = "<p style='color: #ff4655;'>Error al cargar el arsenal de armas o los datos del usuario.</p>";
     }
 }
 
@@ -40,20 +46,38 @@ function inicializarEventos() {
         });
     });
 
-    sortSelect.addEventListener("change", (e) => {
-        ordenActual = e.target.value;
-        filtrarYRenderizar();
-    });
+    if (sortSelect) {
+        sortSelect.addEventListener("change", (e) => {
+            ordenActual = e.target.value;
+            filtrarYRenderizar();
+        });
+    }
 
     if (btnCarrito) {
         btnCarrito.addEventListener("click", () => {
-            if (cartModal) cartModal.style.display = "flex";
+            if (cartModal) {
+                cartModal.style.display = "flex";
+                actualizarCarrito();
+            }
         });
     }
 
     if (closeCartBtn) {
         closeCartBtn.addEventListener("click", () => {
             if (cartModal) cartModal.style.display = "none";
+        });
+    }
+
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener("click", () => {
+            if (carrito.length === 0) {
+                alert("El carrito está vacío.");
+                return;
+            }
+            alert("¡Compra realizada con éxito! Tu arsenal llegará pronto.");
+            carrito = [];
+            actualizarCarrito();
+            cartModal.style.display = "none";
         });
     }
 }
@@ -63,6 +87,8 @@ function filtrarYRenderizar() {
         if (categoriaActual === "all") return true;
         return arma.category.toLowerCase() === categoriaActual.toLowerCase();
     });
+
+    armasFiltradas = armasFiltradas.filter(arma => arma.stock > 0);
 
     if (ordenActual === "name-asc") {
         armasFiltradas.sort((a, b) => a.name.localeCompare(b.name));
@@ -75,7 +101,7 @@ function renderizarArmas(armas) {
     gridProductos.innerHTML = "";
 
     if (armas.length === 0) {
-        gridProductos.innerHTML = "<p style='color: #8b9bb4;'>No hay armas disponibles en esta categoría.</p>";
+        gridProductos.innerHTML = "<p style='color: #8b9bb4; text-align: center; width: 100%; grid-column: 1/-1;'>No hay armas disponibles en esta categoría.</p>";
         return;
     }
 
@@ -83,31 +109,25 @@ function renderizarArmas(armas) {
         const tarjeta = document.createElement("div");
         tarjeta.className = "weapon-card";
 
-        const hayStock = arma.stock > 0;
-        const textoStock = hayStock ? `STOCK: ${arma.stock} UDS` : "SIN STOCK";
-        const colorStock = hayStock ? "#8b9bb4" : "#ff4655";
-        const textoBoton = hayStock ? "AÑADIR" : "AGOTADO";
-        const estadoBoton = hayStock ? "" : "disabled style='background-color: #3a4755; color: #768089; cursor: not-allowed; border-color: #3a4755;'";
-
         tarjeta.innerHTML = `
             <div class="card-header">
                 <span class="weapon-category">${arma.category}</span>
-                <span class="weapon-desc-short" style="color: ${colorStock}; font-weight: bold;">${textoStock}</span>
+                <span class="weapon-desc-short" style="color: #8b9bb4;">STOCK: ${arma.stock} UDS</span>
             </div>
             <div class="weapon-img-container">
-                <img src="${arma.image}" alt="${arma.name}" class="weapon-img" style="${hayStock ? '' : 'opacity: 0.4;'}">
+                <img src="${arma.image}" alt="${arma.name}" class="weapon-img">
             </div>
             <h3 class="weapon-name">${arma.name}</h3>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
                 <span style="color: #ff4655; font-weight: bold; font-size: 18px;">${arma.price} VP</span>
-                <button class="filter-btn btn-add" data-id="${arma.id}" ${estadoBoton}>${textoBoton}</button>
+                <button class="filter-btn btn-add" data-id="${arma.id}">AÑADIR</button>
             </div>
         `;
 
         gridProductos.appendChild(tarjeta);
     });
 
-    document.querySelectorAll(".btn-add:not([disabled])").forEach(btn => {
+    document.querySelectorAll(".btn-add").forEach(btn => {
         btn.addEventListener("click", (e) => {
             const id = parseInt(e.target.getAttribute("data-id"));
             agregarAlCarrito(id);
@@ -139,10 +159,18 @@ function actualizarCarrito() {
     if (!cartItemsContainer) return;
 
     cartItemsContainer.innerHTML = "";
+
+    if (usuarioLogueado) {
+        const userNotice = document.createElement("div");
+        userNotice.style.cssText = "background: #1f2b37; border-left: 3px solid #ff4655; padding: 8px 12px; margin-bottom: 15px; font-size: 12px; color: #ece8e1;";
+        userNotice.innerHTML = `<strong>Enviando pedido a:</strong> ${usuarioLogueado.name}<br><span style="color: #8b9bb4;">${usuarioLogueado.address}</span>`;
+        cartItemsContainer.appendChild(userNotice);
+    }
+
     let totalVP = 0;
 
     if (carrito.length === 0) {
-        cartItemsContainer.innerHTML = "<p style='color: #768089; text-align: center;'>El carrito está vacío.</p>";
+        cartItemsContainer.innerHTML += "<p style='color: #768089; text-align: center; padding: 20px 0;'>El carrito está vacío.</p>";
     } else {
         carrito.forEach(item => {
             totalVP += item.price * item.cantidad;
@@ -152,12 +180,13 @@ function actualizarCarrito() {
             row.innerHTML = `
                 <div>
                     <strong>${item.name}</strong>
-                    <div style="font-size: 12px; color: #ff4655;">${item.price} VP x ${item.cantidad}</div>
+                    <div style="font-size: 12px; color: #ff4655;">${item.price} VP x ${item.cantidad} = ${item.price * item.cantidad} VP</div>
                 </div>
-                <div>
+                <div style="display: flex; align-items: center; gap: 5px;">
                     <button onclick="cambiarCantidad(${item.id}, -1)" style="background:#1f2b37; color:white; border:1px solid #ff4655; padding: 2px 8px; cursor:pointer;">-</button>
-                    <span style="margin: 0 8px;">${item.cantidad}</span>
+                    <span style="margin: 0 5px; font-weight: bold;">${item.cantidad}</span>
                     <button onclick="cambiarCantidad(${item.id}, 1)" style="background:#1f2b37; color:white; border:1px solid #ff4655; padding: 2px 8px; cursor:pointer;">+</button>
+                    <button onclick="eliminarDelCarrito(${item.id})" style="background:transparent; color:#ff4655; border:none; margin-left:8px; cursor:pointer; font-size: 16px;">🗑️</button>
                 </div>
             `;
             cartItemsContainer.appendChild(row);
@@ -183,5 +212,10 @@ window.cambiarCantidad = function(id, cambio) {
             carrito = carrito.filter(i => i.id !== id);
         }
     }
+    actualizarCarrito();
+};
+
+window.eliminarDelCarrito = function(id) {
+    carrito = carrito.filter(i => i.id !== id);
     actualizarCarrito();
 };
