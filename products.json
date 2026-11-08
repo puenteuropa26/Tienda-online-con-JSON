@@ -4,7 +4,10 @@
     "name": "Classic",
     "description": "It is the default weapon at the start of each round.",
     "category": "Sidearm",
-    "fire_mode": "Semi-Automatic"
+    "fire_mode": "Semi-Automatic",
+    "price": 0,
+    "stock": 99,
+    "image": "images/images_products/classic.png"
 },
 
 {
@@ -12,7 +15,10 @@
     "name": "Shorty",
     "description": "A compact shotgun that is effective at close range.",
     "category": "Sidearm",
-    "fire_mode": "Semi-Automatic"
+    "fire_mode": "Semi-Automatic",
+    "price": 150,
+    "stock": 15,
+    "image": "images/images_products/shorty.png"
 },
 
 {
@@ -20,7 +26,10 @@
     "name": "Frenzy",
     "description": "A fully automatic sidearm that is effective at close range.",
     "category": "Sidearm",
-    "fire_mode": "Fully-Automatic"
+    "fire_mode": "Fully-Automatic",
+    "price": 450,
+    "stock": 0,
+    "image": "images/images_products/frenzy.png"
 },
 
 {
@@ -28,141 +37,174 @@
     "name": "Ghost",
     "description": "A silenced sidearm that is effective at medium range.",
     "category": "Sidearm",
-    "fire_mode": "Semi-Automatic"
+    "fire_mode": "Semi-Automatic",
+    "price": 500,
+    "stock": 25,
+    "image": "images/images_products/ghost.png"
 },
 
 {
     "id": 5,
-    "name": "Bandit",
-    "description": "A semi-automatic sidearm that is effective at medium range.",
+    "name": "Sheriff",
+    "description": "A high-damage revolver that is effective at medium range.",
     "category": "Sidearm",
-    "fire_mode": "Semi-Automatic"
+    "fire_mode": "Semi-Automatic",
+    "price": 800,
+    "stock": 8,
+    "image": "images/images_products/sheriff.png"
 },
 
 {
     "id": 6,
-    "name": "Sheriff",
-    "description": "A high-damage revolver that is effective at medium range.",
-    "category": "Sidearm",
-    "fire_mode": "Semi-Automatic"
+    "name": "Stinger",
+    "description": "Submachine gun designed for close-quarters combat.",
+    "category": "SMGS",
+    "fire_mode": "Automatic",
+    "price": 1100,
+    "stock": 12,
+    "image": "images/images_products/stinger.png"
 },
 
 {
     "id": 7,
-    "name": "Stinger",
-    "description": "It is a submachine gun designed for close-quarters combat and budget-friendly rounds.",
+    "name": "Spectre",
+    "description": "Automatic submachine gun ideal for close and medium range.",
     "category": "SMGS",
-    "fire_mode": "Automatic"
+    "fire_mode": "Automatic",
+    "price": 1600,
+    "stock": 0,
+    "image": "images/images_products/spectre.png"
 },
 
 {
     "id": 8,
-    "name": "Spectre",
-    "description": "Automatic submachine gun, used as a primary weapon; ideal for close- and medium-range combat.",
-    "category": "SMGS",
-    "fire_mode": "Automatic"
+    "name": "Bucky",
+    "description": "A compact shotgun effective at close range.",
+    "category": "Shotguns",
+    "fire_mode": "Semi-Automatic",
+    "price": 850,
+    "stock": 6,
+    "image": "images/images_products/bucky.png"
 },
 
 {
     "id": 9,
-    "name": "Bulldog",
-    "description": "Affordable automatic rifle, ideal for forced-buy rounds",
-    "category":  "Rifle",
-    "fire_mode": "Automatic"
+    "name": "Judge",
+    "description": "Fully automatic shotgun devastating at short range.",
+    "category": "Shotguns",
+    "fire_mode": "Automatic",
+    "price": 1850,
+    "stock": 0,
+    "image": "images/images_products/judge.png"
 },
 
 {
     "id": 10,
-    "name": "Guardian",
-    "description": "Valorant designated semi-automatic rifle designed for medium and long distance combat",
+    "name": "Bulldog",
+    "description": "Affordable automatic rifle, ideal for forced-buy rounds.",
     "category": "Rifle",
-    "fire_mode": "Semi-Automatic"
+    "fire_mode": "Automatic",
+    "price": 2050,
+    "stock": 14,
+    "image": "images/images_products/bulldog.png"
 },
 
 {
     "id": 11,
-    "name": "Warden",
-    "description": "Long-distance automatic rifle, characterized by its integrated sight glass",
+    "name": "Guardian",
+    "description": "Designated semi-automatic rifle for medium and long distance.",
     "category": "Rifle",
-    "fire_mode": "Automatic"
+    "fire_mode": "Semi-Automatic",
+    "price": 2250,
+    "stock": 9,
+    "image": "images/images_products/guardian.png"
 },
 
 {
     "id": 12,
     "name": "Phantom",
-    "description": "Automatic rifle, effective for short and medium distance.",
+    "description": "Automatic rifle, highly accurate with silenced shots.",
     "category": "Rifle",
-    "fire_mode": "Automatic"
+    "fire_mode": "Automatic",
+    "price": 2900,
+    "stock": 30,
+    "image": "images/images_products/phantom.png"
 },
 
 {
-    "id":13,
+    "id": 13,
     "name": "Vandal",
-    "description": "The quintessential rifle, designed to eliminate targets with a shot to the head.",
+    "description": "The quintessential rifle designed for single-shot headshots.",
     "category": "Rifle",
-    "fire_mode": "Automatic"
+    "fire_mode": "Automatic",
+    "price": 2900,
+    "stock": 40,
+    "image": "images/images_products/vandal.png"
 },
 
 {
-    "id":14,
-    "name": "Bucky",
-    "description": "A compact shotgun that is effective at close range.",
-    "category": "Shotguns",
-    "fire_mode": "Semi-Automatic"
-},
-
-{
-    "id":15,
-    "name": "Judge",
-    "description": "A fully automatic sidearm that is effective at close range.",
-    "category": "Shotguns",
-    "fire_mode": "Automatic"
-},
-
-{
-    "id":16,
+    "id": 14,
     "name": "Marshal",
-    "description": "Semi-automatic sniper ideal for eco rounds.",
+    "description": "Lever-action sniper rifle ideal for eco rounds.",
     "category": "Sniper rifle",
-    "fire_mode": "Semi-Automatic"
+    "fire_mode": "Semi-Automatic",
+    "price": 950,
+    "stock": 11,
+    "image": "images/images_products/marshal.png"
 },
+
 {
-    "id":17,
+    "id": 15,
     "name": "Outlaw",
-    "description": "Semi-automatic, double-barreled sniper rifle",
+    "description": "Double-barreled sniper rifle with high impact.",
     "category": "Sniper rifle",
-    "fire_mode": "Semi-Automatic"
+    "fire_mode": "Semi-Automatic",
+    "price": 2400,
+    "stock": 7,
+    "image": "images/images_products/outlaw.png"
 },
 
 {
-    "id":18,
+    "id": 16,
     "name": "Operator",
-    "description": "A high-damage sniper rifle that is effective at long range.",
+    "description": "High-damage bolt-action sniper rifle.",
     "category": "Sniper rifle",
-    "fire_mode": "Bolt-Action"
+    "fire_mode": "Bolt-Action",
+    "price": 4700,
+    "stock": 0,
+    "image": "images/images_products/operator.png"
 },
 
 {
-    "id":19,
+    "id": 17,
     "name": "Ares",
-    "description": "A fully automatic machine gun that is effective at medium range.",
+    "description": "Heavy machine gun with continuous fire rate.",
     "category": "Machine Gun",
-    "fire_mode": "Automatic"
+    "fire_mode": "Automatic",
+    "price": 1600,
+    "stock": 8,
+    "image": "images/images_products/ares.png"
 },
 
 {
-    "id":20,
+    "id": 18,
     "name": "Odin",
-    "description": "A fully automatic machine gun that is effective at long range.",
+    "description": "High capacity automatic machine gun.",
     "category": "Machine Gun",
-    "fire_mode": "Automatic"
+    "fire_mode": "Automatic",
+    "price": 3200,
+    "stock": 3,
+    "image": "images/images_products/odin.png"
 },
 
 {
-    "id":21,
-    "name": "Knife",
-    "description": "A melee weapon that is effective at close range.",
+    "id": 19,
+    "name": "Tactical Knife",
+    "description": "Melee weapon for quick close-range strikes.",
     "category": "Melee",
-    "fire_mode": "Melee"
+    "fire_mode": "Melee",
+    "price": 0,
+    "stock": 99,
+    "image": "images/images_products/knife.png"
 }
 ]

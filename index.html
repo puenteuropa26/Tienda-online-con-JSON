@@ -3,13 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name ="description" content="Online store to buy Valorant weapon skins">
-    <meta name ="keywords" content="Valorant, skins, online store, buy skins">
+    <title>VALORANT // ARSENAL STORE</title>
     <link rel="stylesheet" href="style.css">
-    <title>Valorant Skins Store</title>
 </head>
 <body>
 
-    
+    <header class="valorant-header">
+        <div class="header-left">
+            <div class="logo-box">V</div>
+            <div class="title-container">
+                <h1>VALORANT <span class="separator">//</span> ARSENAL</h1>
+                <span class="subtitle">CATÁLOGO Y TIENDA OFICIAL</span>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <button id="btn-carrito" class="cart-btn">
+                <span class="carrito-icon">🛒</span>
+                <span class="carrito-text">CARRITO</span>
+                <span id="carrito-count" class="cart-counter">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="filters-container">
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">TODOS</button>
+            <button class="filter-btn" data-category="Sidearm">SIDEARMS</button>
+            <button class="filter-btn" data-category="SMGS">SMGS</button>
+            <button class="filter-btn" data-category="Shotguns">SHOTGUNS</button>
+            <button class="filter-btn" data-category="Rifle">RIFLES</button>
+            <button class="filter-btn" data-category="Sniper rifle">SNIPERS</button>
+            <button class="filter-btn" data-category="Machine Gun">HEAVY</button>
+            <button class="filter-btn" data-category="Melee">MELEE</button>
+        </div>
+
+        <div class="sort-dropdown-container">
+            <label for="sort-select" class="sort-label">ORDENAR:</label>
+            <select id="sort-select" class="valorant-select">
+                <option value="default">Por defecto</option>
+                <option value="name-asc">Nombre (A - Z)</option>
+            </select>
+        </div>
+    </section>
+
+    <main class="weapons-catalog">
+        <div id="product-grid" class="weapon-grid">
+        </div>
+    </main>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>CARRITO DE COMPRA <span class="separator">//</span> VALORANT</h2>
+                <button id="close-cart" class="close-btn">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-body">
+            </div>
+            <div class="cart-footer">
+                <div class="total-box">
+                    <span>TOTAL A PAGAR:</span>
+                    <span id="cart-total">0 VP</span>
+                </div>
+                <button id="checkout-btn" class="cart-btn" style="width: 100%; justify-content: center;">FINALIZAR COMPRA</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
